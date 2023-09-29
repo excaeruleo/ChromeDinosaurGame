@@ -3,6 +3,8 @@ var block = document.getElementById("block");
 document.addEventListener("click",jump);
 let score = document.querySelector("#score");
 let totalScore = 0;
+let distance = document.querySelector("#distance");
+let totalDistance = 0;
 function jump(){
     if(character.classList != "animate"){
         character.classList.add("animate");
@@ -22,6 +24,10 @@ function checkDead(){
     if(blockLeft<20 && blockLeft>-20 && characterTop>=130){
         alert("Game over! Score: "  + totalScore);
         totalScore = 0;
+    }
+    else {
+        totalDistance++;
+        distance.innerHTML = totalDistance;
     }
 }
 
